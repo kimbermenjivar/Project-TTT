@@ -6,25 +6,25 @@
 // use require without a reference to ensure a file is bundled
 // require('./example')
 
-const authEvents = require('./authentication/events')
+const addHandlers = require('./authentication/events')
 
 const moves = ['', '', '', '', '', '', '', '', '']
 let playerXTurn = true // Is it currently the X Player's turn-used boolean since its t/f
-let moveCount = 0 // How many successful moves have occurred
-let winner = false // Has a winner been found?
-let points1 = 0 // player 1 points
-let points2 = 0 // player 2 points
+const moveCount = 0 // How many successful moves have occurred
+const winner = false // Has a winner been found?
+const points1 = 0 // player 1 points
+const points2 = 0 // player 2 points
 const size = 3
 
 // Responsible for creating a tic tac toe board in HTML
 const drawBoard = function () {}
 // Responsible for resetting game logic like turn and moveCount.  Also turns winner back to false
-const restartGame = function () {}
+
 // Checks board to see if last move created a win condition
 const checkForWinner = function () {}
 
 const tryMove = function () {
-    
+
 }
 
 // Returns all answers
@@ -59,5 +59,8 @@ const squareClickHandler = function () {
 
 // Document onReady.  Runs once when the site has loaded
 $(() => {
+  addHandlers()
   $('.butt').on('click', squareClickHandler)
 })
+// targeting the RESTART button//
+

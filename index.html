@@ -16,13 +16,13 @@
 
   <div class="container">
     <form id="sign-up" class="border">
-      <input type="password" name="credentials[email]" placeholder="Email">
+      <input type="text" name="credentials[email]" placeholder="Email">
       <input type="password" name="credentials[password]" placeholder="Password">
       <input type="password" name="credentials[password_confirmation]" placeholder="Confirm Password">
       <input type="submit" value="Sign up!">
     </form>
     <form id="sign-in" class="border">
-      <input type="password" name="credentials[email]" placeholder="Email">
+      <input type="text" name="credentials[email]" placeholder="Email">
       <input type="password" name="credentials[password]" placeholder="Password">
       <input type="submit" value="Sign in!">
     </form>
@@ -38,6 +38,9 @@
     <h2> Tic-Tac-Toe</h2>
 
     <div class="row">
+      <form id="RESTART" class="btn restart">
+      </form>
+      </div>
       <div class="col-md-3 butt"></div>
       <div class="col-md-3 butt"></div>
       <div class="col-md-3 butt"></div>
@@ -53,7 +56,7 @@
       <div class="col-md-3 butt"></div>
     </div>
     <div>
-      <button class="btn restart">RESTART</button>
+      <button id="restart" class="btn">RESTART</button>
     </div>
   </div>
 </body>
