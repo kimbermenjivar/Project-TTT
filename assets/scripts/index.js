@@ -57,10 +57,17 @@ const squareClickHandler = function () {
   playerXTurn = !playerXTurn
 }
 
+const onRestart = function (event) {
+  event.preventDefault()   
+  console.log('onRestart ran')
+  $('.butt').html('')
+  playerXTurn = true
+}
 // Document onReady.  Runs once when the site has loaded
 $(() => {
   addHandlers()
   $('.butt').on('click', squareClickHandler)
+  $('#restart').on('click', onRestart)
 })
 // targeting the RESTART button//
 

@@ -42,20 +42,12 @@ const onSignOut = function (event) {
     .then(ui.signOutSuccess)
     .catch(ui.signOutFailure)
 }
-const onRestart = function (event) {
-  event.preventDefault()
-  event.playerXTurn = true
-  event.playerOTurn = false
- 
-  console.log('onRestart ran')
-  $('.butt').html('')
-}
+
 const addHandlers = () => {
   $('#sign-up').on('submit', onSignUp)
   $('#sign-in').on('submit', onSignIn)
   $('#change-password').on('submit', onChangePassword)
   $('#sign-out').on('submit', onSignOut)
-  $('#restart').on('click', onRestart)
 }
 
 module.exports = addHandlers
