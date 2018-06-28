@@ -1,74 +1,64 @@
 [![General Assembly Logo](https://camo.githubusercontent.com/1a91b05b8f4d44b5bbfb83abac2b0996d8e26c92/687474703a2f2f692e696d6775722e636f6d2f6b6538555354712e706e67)](https://generalassemb.ly/education/web-development-immersive)
 
-# browser-template
+# Project Day 1:
 
-A template for starting front-end projects. Webpack for `require` system, build
-pipeline, and development server. Boostrap and Handlebars.js included. No
-front-end frameworks included.
+- I started my Tic Tac Toe project by downloading a zip file with project info
 
-## Installation
+- I created a GitHub account and Repository I named my ....Project TTT
 
-1. [Download](../../archive/master.zip) this template.
-1. Move to the `wdi/projects` directory, then unzip the template directory with
-    `unzip /Users/<user-name>/Downloads/browser-template-master.zip`.
-1. Rename the template directory from `browser-template-master` to
-    `<project-name>-client`.
-1. Empty [`README.md`](README.md) and fill with your own content.
-1. Replace all instances of `ga-wdi-boston.browser-template` with the name of
-    your project.
-1. Move into the new project and `git init`.
-1. Add all of the files in your project with the command `git add --all`.
-      - **Note: This is the only time you should run this command!**
-1. Commit all of your files with the command `git commit`.
-      - Your commit title should read `Initial commit`.
-1. Install dependencies with `npm install`.
-1. Create a new repository on [github.com](https://github.com),
-    _not GitHub Enterprise_.
-1. Name the new repository with the same name used on Step 3.
+- I pushed an empty repository doc to test it was syncing up to GitHub 
 
-## Structure
+# Project Day 2:
 
-Developers should store JavaScript files in [`assets/scripts`](assets/scripts).
-The "manifest" or entry-point is
-[`assets/scripts/index.js`](assets/scripts/index.js). In general, only
-application initialization goes in this file. It's normal for developers to
-start putting all code in this file, but encourage them to break out different
-responsibilities and use the `require` syntax put references where they're
-needed.
+- Originally I created 5 user stories - they were actual stories so I had to recreate user story steps.
 
-Developers should set `apiUrls.production` and `apiUrls.development` in
-[`config/environment.js`](config/environment.js).  With
-`apiUrls` set, developers may rely on `apiUrl` as the base for API
-URLs.
+- I did draw a wireframe on paper then took a picture and I uploaded pictures to GitHub Enterprise  - of course it changed a lot so the original design was eventually replaced as I worked on the project.
 
-Developers should store styles in [`assets/styles`](assets/styles) and load them
-from [`assets/styles/index.scss`](assets/styles/index.scss). Bootstrap version 3 is
-included in this template.
+- I started with the Sign Up,Sign-In,Change Password and Sign-Out using ur template from Jquery /Ajax token authentication. Primarily because I knew it worked.
 
-Developers should use [getFormFields](get-form-fields.md) to retrieve form data
-to send to an API.
+# Project Day 3:
 
-To deploy a browser-template based SPA, run `grunt deploy`.
+- I made a graph/ table I did this after many errors and google searches I was able to get the right squares I was looking for.
 
-## Tasks
+- I used div-buttons-row class ect...
 
-Developers should run these often!
+- For me I needed a visual of what I was trying to manipulate.
 
-- `grunt nag` or just `grunt`: runs code quality analysis tools on your code
-    and complains
-- `grunt make-standard`: reformats all your code in the JavaScript Standard Style
-- `grunt <server|serve|s>`: generates bundles, watches, and livereloads
-- `grunt test`: runs any automated tests, depends on `grunt build`
-- `grunt build`: place bundled styles and scripts where `index.html` can find
-    them
+- My struggles were constantly getting a blank screen or a revert to old screen anytime I put the code in a place it didnt like. Ugh !
 
-## Additional Resources
+- I spent this day trying to get X and O to show up.
+- At first I tried making my own code and that didnt work, then I started using Google.
+  I copied and pasted a LOT of code I found on Stack Overflow, W3 schools and code academy.
+- I  worked in html and scss. NO X or O
 
-- [Modern Javascript Explained for Dinosaurs](https://medium.com/@peterxjang/modern-javascript-explained-for-dinosaurs-f695e9747b70)
-- [Making Sense of Front End Build Tools](https://medium.freecodecamp.org/making-sense-of-front-end-build-tools-3a1b3a87043b)
+# Project Day 4:
 
-## [License](LICENSE)
+- Today I was stagnet- I found out that more code is NOT neccessarily better .
 
-1. All content is licensed under a CC­BY­NC­SA 4.0 license.
-1. All software code is licensed under GNU GPLv3. For commercial use or
-    alternative licensing, please contact legal@ga.co.
+- I spent 1/2 of my day deleting extra code that did nothing.
+
+- I was finally able to get X and O to populate in events.js
+yay!
+
+- I learned quickly to commit after any success because I did have to revert back to a PREVIOUS COMMIT!
+
+# Project Day 5:
+
+- Sign in-out-up Change Password was tested and works.
+
+- Today was all about call handlers for my RESTART button.
+
+- I also couldnt get X to always be the first letter when I restarted the game so... 
+
+- I ended up having to move my "PlayerXTurn=true'
+from events.js into index.js for my game to start with X every time. Honestly, I have no idea why that worked...but it did.
+ 
+- I wrapped up with sending up to github
+
+
+# Things I still need to do:
+
+- A button to keep score.
+
+- I have code started to determine a winner( and announce you win!)but its not working     yet.
+

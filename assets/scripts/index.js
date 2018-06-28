@@ -45,7 +45,12 @@ const loadAnswers = function () {
 // AND MAKES AN X OR O, ADD THAT CLICK TO THE
 // moves ARRAY, AND THEN SWITCH TO THE OTHER PLAYER
 // CHECK IF SOMEONE WON
-
+const onRestart = function (event) {
+  event.preventDefault()
+  console.log('onRestart ran')
+  $('.butt').html('')
+  playerXTurn = true
+}
 const squareClickHandler = function () {
   console.log('Click Handler Clicked')
   console.log(this)
@@ -57,12 +62,6 @@ const squareClickHandler = function () {
   playerXTurn = !playerXTurn
 }
 
-const onRestart = function (event) {
-  event.preventDefault()   
-  console.log('onRestart ran')
-  $('.butt').html('')
-  playerXTurn = true
-}
 // Document onReady.  Runs once when the site has loaded
 $(() => {
   addHandlers()
@@ -70,4 +69,3 @@ $(() => {
   $('#restart').on('click', onRestart)
 })
 // targeting the RESTART button//
-
