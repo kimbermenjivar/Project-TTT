@@ -1,10 +1,9 @@
 $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
 @import '~bootstrap-sass/assets/stylesheets/bootstrap/';
 
-.butt {
- 
-    width:  100px;
-    height: 100px;
+.Square {
+    width: 300px;
+    height: 300px;
     border: 5px solid #000000;
     background: #FFFFFF;
     font-size: 60pt;
@@ -12,19 +11,21 @@ $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
     font-weight: bold;
     text-align: center;
     margin: auto;
-       }
+}
 
 fieldset {
-        text-align:center;
+    text-align: center;
     margin: auto;
 }
+
 .butt:hover {
     background: #C2DBFC;
     text-align: center;
- }
+}
+
 body {
-     background-color: rgb(112, 5, 98)
-    }
+    background-color: rgb(112, 5, 98)
+}
 
 h1 {
     color: rgb(243, 16, 186)
@@ -32,14 +33,43 @@ h1 {
 
 p {
     color: black
-    
 }
 
 form {
-       background-color: rgb(225, 173, 230);
+    background-color: rgb(225, 173, 230);
     width: 220px;
     padding: 2 4px;
     border: 20px solid rgb(73, 5, 70);
     margin: auto;
     clear: both;
+}
+
+body {
+    width: 600px;
+    margin: auto;
+    text-align: center;
+}
+
+h1 {
+    border-bottom: 2px solid purple;
+    font-family: monospace
+}
+
+.Square {
+    height: 150px;
+    width: 150px;
+    font-size: 50pt;
+    text-align: center;
+    font-family: 'Georgia', cursive;
+}
+
+#message {
+    font-size: 20pt;
+    font-family: 'Georgia', cursive;
+}
+
+#restart {
+    font-size: 20pt;
+    font-family: 'Georigia', cursive;
+    color: black;
 }
