@@ -20,9 +20,9 @@ function setMessage (msg) {
 function nextMove (square) {
   if (document.winner != null) {
     setMessage(document.turn + 'already won.')
-  } else if (square.innerText === '') {
-    square.innerText = document.turn
-    switchTurn()
+  } else if (square.target.innerText === '') {
+    square.target.innerText = document.turn
+    // switchTurn()
   } else {
     setMessage('Pick another square.')
   }
@@ -158,16 +158,18 @@ const squareClickHandler = function (squareClickHandler, selectedSq) {
 
 $(() => {
   // stuff that happens when page is loaded
-  // startGame()
-  // squareClickHandler()
-  // setMessage()
-  // nextMove()
-  // switchTurn()
-  // checkForWinner()
-  // checkRow()
-  // pickAnotherSquare()
+  startGame()
+//   squareClickHandler()
+//   setMessage()
+//   nextMove()
+//   switchTurn()
+//   checkForWinner()
+//   checkRow()
+//   pickAnotherSquare()
 
   $('.Square').on('click', function (event) {
     console.log(event.target.id)
+    console.log(document.turn)
   })
+  $('.Square').on('click', nextMove)
 })
