@@ -16,7 +16,7 @@ const onSignUp = function (event) {
 
 const onSignIn = function (event) {
   event.preventDefault()
-  console.log('Sign in ran!')
+    console.log('Sign in ran!')
 
   const data = getFormFields(this) // this === event.target
   api.signIn(data)
@@ -41,13 +41,20 @@ const onSignOut = function (event) {
   api.signOut()
     .then(ui.signOutSuccess)
     .catch(ui.signOutFailure)
-}
+}   
+//     const Winner(data) {
+//     .then(ui.Winner)
+//     .catch(ui.Winner)
+// }
 
 const addHandlers = () => {
   $('#sign-up').on('submit', onSignUp)
   $('#sign-in').on('submit', onSignIn)
   $('#change-password').on('submit', onChangePassword)
   $('#sign-out').on('submit', onSignOut)
+//   $('#start game').on('submit', OnStartGame)
 }
 
-module.exports = addHandlers
+module.exports = {
+    addHandlers
+} 
