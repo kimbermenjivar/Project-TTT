@@ -15,5 +15,3 @@ if (window.location.hostname === 'localhost') {
 module.exports = {
   apiUrl
 }
-// WEBPACK FOOTER //
-// ./assets/scripts/config.js

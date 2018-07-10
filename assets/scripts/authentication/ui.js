@@ -15,7 +15,7 @@ const signUpFailure = function (error) {
 }
 
 const signInSuccess = function (data) {
-  $('#message').text('Signed in successfully')
+  $('#message').text('Sign in successful!')
   $('#message').css('background-color', 'green')
   console.log('signInSuccess ran. Data is:', data)
   store.user = data.user
@@ -33,22 +33,34 @@ const signOutSuccess = function () {
   console.log('signOutSuccess ran and nothing was returned')
   store.user = null
 }
-
 const signOutFailure = function (error) {
   $('#message').text('Error on sign out')
   $('#message').css('background-color', 'red')
   console.log('signOutFailure ran. Data is:', error)
 }
-const RESTARTSuccess = function () {
-  $('#message').text('changed password successfully')
+const changePasswordSuccess = function (data) {
+  $('#message').text('Success on change password')
   $('#message').css('background-color', 'green')
-  console.log('RESTARTSuccess ran and nothing was returned')
+  console.log('changePasswordSuccess ran. Data is:', data)
+}
+const changePasswordFailure = function (error) {
+  $('#message').text('Error on')
+  $('#message').css('background-color', 'red')
+  console.log('changePasswordFailure ran. Data is:', error)
+  store.user = null
+}
+const onStartGameSuccess = function (data) {
+  $('#message').text('Start Game Successful!')
+  $('#message').css('background-color', 'green')
+  console.log('startSuccess ran and nothing was returned')
+  store.game = data.game
+  console.log(store.game)
 }
 
-const RESTARTFailure = function (error) {
+const onStartGameFailure = function (error) {
   $('#message').text('Error on Password change')
   $('#message').css('background-color', 'red')
-  console.log('RESTARTFailure ran. Data is:', error)
+  console.log('startFailure ran. Data is:', error)
 }
 module.exports = {
   signUpSuccess,
@@ -57,6 +69,8 @@ module.exports = {
   signInFailure,
   signOutSuccess,
   signOutFailure,
-  RESTARTSuccess,
-  RESTARTFailure
+  onStartGameSuccess,
+  onStartGameFailure,
+  changePasswordSuccess,
+  changePasswordFailure
 }
