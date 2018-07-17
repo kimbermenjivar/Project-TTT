@@ -1,0 +1,100 @@
+[33mcommit f7fa245b4cb52a0e95daff95bbaf65de5a11eec7[m
+Author: kimbermenjivar <kimbermenjivar@gmail.com>
+Date:   Fri Jul 6 13:08:52 2018 -0400
+
+    Awrsome Player X Wins!
+
+[1mdiff --git a/assets/scripts/index.js b/assets/scripts/index.js[m
+[1mindex a1cd8bc..dbdd8ca 100644[m
+[1m--- a/assets/scripts/index.js[m
+[1m+++ b/assets/scripts/index.js[m
+[36m@@ -1,6 +1,6 @@[m
+ 'use strict'[m
+ [m
+[31m-function startGame() {[m
+[32m+[m[32mfunction startGame () {[m[41m[m
+   for (let i = 1; i <= 9; i++) {[m
+     clearBox(i)[m
+   }[m
+[36m@@ -9,7 +9,7 @@[m [mdocument.turn = 'X'[m
+ document.winner = null[m
+ setMessage(document.turn + 'gets to start.')[m
+ [m
+[31m-function setMessage(msg) {[m
+[32m+[m[32mfunction setMessage (msg) {[m[41m[m
+   document.getElementById('message').innerText = msg[m
+   //  if(square.innerText = document.turn;[m
+   // switchTurn();[m
+[36m@@ -17,11 +17,10 @@[m [mfunction setMessage(msg) {[m
+   //     setMessage("Pick another square.")[m
+ }[m
+ [m
+[31m-function nextMove(square) {[m
+[31m-//   if (document.winner != null) {[m
+[31m-    // setMessage(document.turn + 'already won.')[m
+[31m-  [m
+[31m-   if (square.target.innerText === '') {[m
+[32m+[m[32mfunction nextMove (square) {[m[41m[m
+[32m+[m[32m  if (document.winner != null) {[m[41m[m
+[32m+[m[32m    setMessage(document.turn + 'already won.')[m[41m[m
+[32m+[m[32m  } else if (square.target.innerText === '') {[m[41m[m
+     square.target.innerText = document.turn[m
+     switchTurn()[m
+   } else {[m
+[36m@@ -29,19 +28,20 @@[m [mfunction nextMove(square) {[m
+   }[m
+ }[m
+ [m
+[31m-function switchTurn() {[m
+[31m-//   if (checkForWinner(document.turn)) {[m
+[31m-    // setMessage(' Awesome ' + document.turn + ', You Win!')[m
+[31m-    // document.winner = document.turn[m
+[31m-   if (document.turn === 'X') {[m
+[32m+[m[32mfunction switchTurn () {[m[41m[m
+[32m+[m[32m  if (checkForWinner(document.turn)) {[m[41m[m
+[32m+[m[32m    setMessage(' Awesome ' + document.turn + ', You Win!')[m[41m[m
+[32m+[m[32m    document.winner = document.turn[m[41m[m
+[32m+[m[32m  } else if (document.turn === 'X') {[m[41m[m
+[32m+[m[41m[m
+     document.turn = 'O'[m
+   } else {[m
+[31m-    document.turn = 'X';[m
+[32m+[m[32m    document.turn = 'X'[m[41m[m
+     setMessage(" It's " + document.turn + "'s turn.'")[m
+   }[m
+ }[m
+ [m
+[31m-function checkForWinner(move) {[m
+[32m+[m[32mfunction checkForWinner (move) {[m[41m[m
+   let result = false[m
+   if (checkRow(1, 2, 3, move) ||[m
+         checkRow(4, 5, 6, move) ||[m
+[36m@@ -56,7 +56,7 @@[m [mfunction checkForWinner(move) {[m
+   }[m
+ }[m
+ [m
+[31m-function checkRow(a, b, c, move) {[m
+[32m+[m[32mfunction checkRow (a, b, c, move) {[m[41m[m
+   let result = false[m
+   if (getBox(a) === move && getBox(b) === move && getBox(c) === move) {[m
+     result = true[m
+[36m@@ -64,8 +64,8 @@[m [mfunction checkRow(a, b, c, move) {[m
+   return result[m
+ }[m
+ [m
+[31m-function getBox(number) {[m
+[31m-  return document.getElementById("'s" + number).innerText[m
+[32m+[m[32mfunction getBox (number) {[m[41m[m
+[32m+[m[32m  return document.getElementById('s' + number).innerText[m[41m[m
+ }[m
+ [m
+ // // use require with a reference to bundle the file and use it in this file[m
+[36m@@ -137,7 +137,7 @@[m [mfunction getBox(number) {[m
+ //   square.innerText = document.turn[m
+ // }[m
+ [m
+[31m-function clearBox(number) {[m
+[32m+[m[32mfunction clearBox (number) {[m[41m[m
+   document.getElementById('s' + number).innerText = ' '[m
+ }[m
+ const squareClickHandler = function (squareClickHandler, selectedSq) {[m

@@ -1,13 +1,11 @@
 'use strict'
 
-const getFormFields = require('../../../lib/get-form-fields')
+const getFormFields = require('../../../lib/get-form-fields.js')
 const api = require('./api')
 const ui = require('./ui')
 
 const onSignUp = function (event) {
   event.preventDefault()
-  console.log('Sign up ran!')
-
   const data = getFormFields(this) // this === event.target
   api.signUp(data)
     .then(ui.signUpSuccess)
@@ -16,7 +14,6 @@ const onSignUp = function (event) {
 
 const onSignIn = function (event) {
   event.preventDefault()
-  console.log('Sign in ran!')
 
   const data = getFormFields(this) // this === event.target
   api.signIn(data)
@@ -50,4 +47,7 @@ const addHandlers = () => {
   $('#sign-out').on('submit', onSignOut)
 }
 
-module.exports = addHandlers
+module.exports = {
+  addHandlers
+}
+
