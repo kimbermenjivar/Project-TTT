@@ -171,7 +171,7 @@ $(() => {
   game.startGame()
   //   squareClickHandler()
   //   setMessage()
-  //   nextMove()
+//   game.nextMove()
   //   switchTurn()
   checkForWinner()
   //   checkRow()
