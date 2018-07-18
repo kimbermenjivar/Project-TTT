@@ -5,9 +5,10 @@ function startGame() {
 }
 document.turn = 'X'
 document.winner = null
-setMessage(document.turn + 'gets to start.')
+setMessage(document.turn + ' gets to start.')
 
-function setMessage(msg) {
+function setMessage (msg) {
+    console.log(msg)
   document.getElementById('message').innerText = msg
   //  if(square.innerText = document.turn;
   // switchTurn();
@@ -15,17 +16,19 @@ function setMessage(msg) {
   //     setMessage("Pick another square.")
 }
 
-function nextMove(square) {
+function nextMove (square) {
   if (document.winner != null) {
-    setMessage(document.turn + 'already won.')
+    setMessage(document.turn + ' already won.')
   } else if (square.target.innerText === '') {
     square.target.innerText = document.turn
     switchTurn()
-    setMessage(document.turn + 'Pick another square.')
+    if (!document.winner) {
+      setMessage(document.turn + ' Pick another square.') 
+    }
   }
 }
 
-function switchTurn() {
+function switchTurn () {
   if (checkForWinner(document.turn)) {
     setMessage(' Awesome ' + document.turn + ', You Win!')
     document.winner = document.turn
@@ -37,22 +40,22 @@ function switchTurn() {
   }
 }
 
-function checkForWinner(move) {
+function checkForWinner (move) {
   let result = false
-  if (checkRow(1, 2, 3, move) ||
-        checkRow(4, 5, 6, move) ||
-        checkRow(7, 8, 9, move) ||
+  if (checkRow(0, 1, 2, move) ||
+        checkRow(3, 4, 5, move) ||
+        checkRow(6, 7, 8, move) ||
+        checkRow(0, 3, 6, move) ||
         checkRow(1, 4, 7, move) ||
         checkRow(2, 5, 8, move) ||
-        checkRow(3, 6, 9, move) ||
-        checkRow(1, 5, 9, move) ||
-        checkRow(3, 5, 7, move)) {
+        checkRow(0, 4, 8, move) ||
+        checkRow(2, 4, 6, move)) {
     result = true
     return result
   }
 }
 
-function checkRow(a, b, c, move) {
+function checkRow (a, b, c, move) {
   let result = false
   if (getBox(a) === move && getBox(b) === move && getBox(c) === move) {
     result = true
@@ -60,7 +63,7 @@ function checkRow(a, b, c, move) {
   return result
 }
 
-function getBox(number) {
+function getBox (number) {
   return document.getElementById('s' + number).innerText
 }
 
@@ -133,7 +136,7 @@ function getBox(number) {
 //   square.innerText = document.turn
 // }
 
-function clearBox(number) {
+function clearBox (number) {
   document.getElementById('s' + number).innerText = ' '
 }
 const squareClickHandler = function (squareClickHandler, selectedSq) {
@@ -156,5 +159,6 @@ const squareClickHandler = function (squareClickHandler, selectedSq) {
 
 module.exports = {
   startGame,
-  nextMove
+  nextMove,
+// checkForWinner
 }

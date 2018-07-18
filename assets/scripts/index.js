@@ -1,7 +1,6 @@
 'use strict'
 const authEvents = require('./authentication/events.js')
 
-<<<<<<< 849202826a24237b93b9b46052e972d8dc38cdb5
 authEvents.addHandlers()
 function startGame () {
   for (let i = 1; i <= 9; i++) {
@@ -161,17 +160,13 @@ const squareClickHandler = function (squareClickHandler, selectedSq) {
 // / Document onReady.Runs once when the site has loaded
 // $(() => {
 //   addHandlers(
-=======
-const game = require('./game')
-const events = require('./authentication/events')
->>>>>>> moved game lgic into its own file- then set up call handlers to export data to index.js and events.js- server is now responding to sign up,sign in. and sign out successfully.
 
 $(() => {
   // stuff that happens when page is loaded
-  game.startGame()
+//   game.startGame()
   //   squareClickHandler()
   //   setMessage()
-//   game.nextMove()
+  // game.nextMove()
   //   switchTurn()
   checkForWinner()
   //   checkRow()
