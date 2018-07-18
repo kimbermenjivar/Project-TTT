@@ -5,12 +5,12 @@ const events = require('./authentication/events')
 
 $(() => {
   // stuff that happens when page is loaded
-  game.startGame()
+//   game.startGame()
   //   squareClickHandler()
   //   setMessage()
-//   game.nextMove()
+  // game.nextMove()
   //   switchTurn()
-  //   checkForWinner()
+//   checkForWinner()
   //   checkRow()
   //   pickAnotherSquare()
   events.addHandlers()
@@ -19,5 +19,5 @@ $(() => {
     console.log(event.target.id)
     console.log(document.turn)
   })
-  $('.Square').on('click', game.nextMove)
+  $('.Square').on('click', game.nextMove, game.checkForWinner)
 })
