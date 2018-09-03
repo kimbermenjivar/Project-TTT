@@ -79,13 +79,13 @@ function getBox (number) {
 
 // const addHandlers = require('./authentication/events')
 
-const moves = ['', '', '', '', '', '', '', '', '']
-const playerXTurn = true // Is it currently the X Player's turn-used boolean since its t/f
-const moveCount = 0 // How many successful moves have occurred
-const winner = false // Has a winner been found?
-const points1 = 0 // player 1 points
-const points2 = 0 // player 2 points
-const size = 3
+// const moves = ['', '', '', '', '', '', '', '', '']
+// const playerXTurn = true // Is it currently the X Player's turn-used boolean since its t/f
+// const moveCount = 0 // How many successful moves have occurred
+// const winner = false // Has a winner been found?
+// const points1 = 0 // player 1 points
+// const points2 = 0 // player 2 points
+// const size = 3
 
 // // Responsible for creating a tic tac toe board in HTML
 // const drawBoard = function () {}
@@ -144,8 +144,8 @@ function clearBox (number) {
   document.getElementById('s' + number).innerText = ' '
 }
 const squareClickHandler = function (squareClickHandler, selectedSq) {
-  console.log('Click Handler Clicked')
-  console.log(this)
+//   console.log('Click Handler Clicked')
+//   console.log(this)
 }
 //   if (playerXTurn) {
 //     this.innerText = 'X'
@@ -173,8 +173,8 @@ $(() => {
   //   pickAnotherSquare()
 
   $('.Square').on('click', function (event) {
-    console.log(event.target.id)
-    console.log(document.turn)
+    // console.log(event.target.id)
+    // console.log(document.turn)
   })
   $('.Square').on('click', nextMove)
 })

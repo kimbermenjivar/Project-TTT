@@ -6,7 +6,7 @@ const ui = require('./ui')
 
 const onSignUp = function (event) {
   event.preventDefault()
-  console.log('Sign up ran!')
+  // console.log('Sign up ran!')
 
   const data = getFormFields(this) // this === event.target
   api.signUp(data)
@@ -16,7 +16,7 @@ const onSignUp = function (event) {
 
 const onSignIn = function (event) {
   event.preventDefault()
-    console.log('Sign in ran!')
+  // console.log('Sign in ran!')
 
   const data = getFormFields(this) // this === event.target
   api.signIn(data)
@@ -26,7 +26,7 @@ const onSignIn = function (event) {
 
 const onChangePassword = function (event) {
   event.preventDefault()
-  console.log('Change Password ran!')
+//   console.log('Change Password ran!')
 
   const data = getFormFields(this) // this === event.target
   api.changePassword(data)
@@ -36,22 +36,27 @@ const onChangePassword = function (event) {
 
 const onSignOut = function (event) {
   event.preventDefault()
-  console.log('Sign put ran!')
+  //   console.log('Sign put ran!')
 
   api.signOut()
     .then(ui.signOutSuccess)
     .catch(ui.signOutFailure)
-}   
+}  
 //     const Winner(data) {
 //     .then(ui.Winner)
 //     .catch(ui.Winner)
 // }
+
+const showGamesPlayed = () => {
+    
+}
 
 const addHandlers = () => {
   $('#sign-up').on('submit', onSignUp)
   $('#sign-in').on('submit', onSignIn)
   $('#change-password').on('submit', onChangePassword)
   $('#sign-out').on('submit', onSignOut)
+  $('#playerX').on('click', showGamesPlayed)
 //   $('#start game').on('submit', OnStartGame)
 }
 
