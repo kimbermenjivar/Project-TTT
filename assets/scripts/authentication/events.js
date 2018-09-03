@@ -26,7 +26,7 @@ const onSignIn = function (event) {
 
 const onChangePassword = function (event) {
   event.preventDefault()
-//   console.log('Change Password ran!')
+  // console.log('Change Password ran!')
 
   const data = getFormFields(this) // this === event.target
   api.changePassword(data)
@@ -41,14 +41,16 @@ const onSignOut = function (event) {
   api.signOut()
     .then(ui.signOutSuccess)
     .catch(ui.signOutFailure)
-}  
+}
 //     const Winner(data) {
 //     .then(ui.Winner)
 //     .catch(ui.Winner)
 // }
 
 const showGamesPlayed = () => {
-    
+  api.allGames()
+    .then(ui.allGamesSuccess)
+    .catch(ui.allgamesFailure)
 }
 
 const addHandlers = () => {
@@ -56,10 +58,10 @@ const addHandlers = () => {
   $('#sign-in').on('submit', onSignIn)
   $('#change-password').on('submit', onChangePassword)
   $('#sign-out').on('submit', onSignOut)
-  $('#playerX').on('click', showGamesPlayed)
+  $('#allGames').on('click', showGamesPlayed)
 //   $('#start game').on('submit', OnStartGame)
 }
 
 module.exports = {
-    addHandlers
-} 
+  addHandlers
+}

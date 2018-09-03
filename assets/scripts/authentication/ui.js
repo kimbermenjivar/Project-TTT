@@ -20,7 +20,7 @@ const signInSuccess = function (data) {
   $('#message').text('Signed in successfully')
   $('#message').css('background-color', 'green')
   $('#sign-in')[0].reset()
-//   console.log('signInSuccess ran. Data is:', data)
+  //   console.log('signInSuccess ran. Data is:', data)
   store.user = data.user
 }
 
@@ -34,7 +34,7 @@ const signInFailure = function () {
 const signOutSuccess = function () {
   $('#message').text('Signed out successfully')
   $('#message').css('background-color', 'green')
-//   console.log('signOutSuccess ran and nothing was returned')
+  //   console.log('signOutSuccess ran and nothing was returned')
   store.user = null
 }
 
@@ -54,6 +54,11 @@ const RESTARTFailure = function () {
   $('#message').css('background-color', 'red')
 //   console.log('RESTARTFailure ran. Data is:', error)
 }
+
+const allGamesSuccess = function (data) {
+  console.log(data)
+}
+
 module.exports = {
   signUpSuccess,
   signUpFailure,
@@ -62,5 +67,6 @@ module.exports = {
   signOutSuccess,
   signOutFailure,
   RESTARTSuccess,
-  RESTARTFailure
+  RESTARTFailure,
+  allGamesSuccess
 }
