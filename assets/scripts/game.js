@@ -1,3 +1,7 @@
+'use strict'
+
+const gameAPI = require('./game/api')
+
 function startGame () {
   for (let i = 1; i <= 9; i++) {
     clearBox(i)
@@ -17,20 +21,25 @@ function setMessage (msg) {
 }
 
 function nextMove (square) {
-  if (document.winner != null) {
-    setMessage(document.turn + ' already won.')
+  const index = this.dataset.index
+  if (document.winner) { // != null
+    // setMessage(document.turn + ' already won.')
+    gameAPI.resetGame()
   } else if (square.target.innerText === '') {
     square.target.innerText = document.turn
-    switchTurn()
+    gameAPI.updateGame(index, document.turn, false)
+    switchTurn(index)
     if (!document.winner) {
       setMessage(document.turn + ' Pick another square.')
     }
   }
 }
 
-function switchTurn () {
+function switchTurn (index) {
   if (checkForWinner(document.turn)) {
+    //   debugger
     setMessage(' Awesome ' + document.turn + ', You Win!')
+    gameAPI.updateGame(index, document.turn, true)
     document.winner = document.turn
   } else if (document.turn === 'X') {
     (document.turn = 'O')

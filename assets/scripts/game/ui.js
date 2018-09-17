@@ -1,6 +1,6 @@
 'use strict'
 
-const store = require('../scripts/store')
+const store = require('../store')
 
 const newGameSuccess = (data) => {
   // console.log("The Current Game ID: " + data.game.id)
@@ -8,17 +8,17 @@ const newGameSuccess = (data) => {
 }
 
 const newGameFailure = () => {
-  $('#game-message').text('Something went wrong, please try again.')
+  $('#message').text('Something went wrong, please try again.')
   setTimeout(() => {
-    $('#game-message').text('')
+    $('#message').text('')
   }, 2000)
 }
 
 const allGamesSuccess = (data) => {
   store.allGames = data.games
-  $('#game-message').text(`${store.allGames.length} games have been played on this account`)
+  $('#message').text(`${store.allGames.length} games have been played on this account`)
   setTimeout(() => {
-    $('#game-message').text('')
+    $('#message').text('')
   }, 2000)
 }
 
