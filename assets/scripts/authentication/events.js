@@ -1,13 +1,16 @@
 'use strict'
 
-const getFormFields = require('../../../lib/get-form-fields')
+const getFormFields = require('../../../lib/get-form-fields.js')
 const api = require('./api')
 const ui = require('./ui')
 
 const onSignUp = function (event) {
   event.preventDefault()
+<<<<<<< 849202826a24237b93b9b46052e972d8dc38cdb5
   // console.log('Sign up ran!')
 
+=======
+>>>>>>> moved game lgic into its own file- then set up call handlers to export data to index.js and events.js- server is now responding to sign up,sign in. and sign out successfully.
   const data = getFormFields(this) // this === event.target
   api.signUp(data)
     .then(ui.signUpSuccess)
@@ -16,7 +19,10 @@ const onSignUp = function (event) {
 
 const onSignIn = function (event) {
   event.preventDefault()
+<<<<<<< 849202826a24237b93b9b46052e972d8dc38cdb5
   // console.log('Sign in ran!')
+=======
+>>>>>>> moved game lgic into its own file- then set up call handlers to export data to index.js and events.js- server is now responding to sign up,sign in. and sign out successfully.
 
   const data = getFormFields(this) // this === event.target
   api.signIn(data)

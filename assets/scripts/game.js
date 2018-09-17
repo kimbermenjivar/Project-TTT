@@ -1,9 +1,4 @@
-'use strict'
-const authEvents = require('./authentication/events.js')
-
-<<<<<<< 849202826a24237b93b9b46052e972d8dc38cdb5
-authEvents.addHandlers()
-function startGame () {
+function startGame() {
   for (let i = 1; i <= 9; i++) {
     clearBox(i)
   }
@@ -12,15 +7,15 @@ document.turn = 'X'
 document.winner = null
 setMessage(document.turn + 'gets to start.')
 
-function setMessage (msg) {
+function setMessage(msg) {
   document.getElementById('message').innerText = msg
-//   //  if(square.innerText = document.turn;
-//      setMessage("Pick another square.")  // switchTurn();
+  //  if(square.innerText = document.turn;
+  // switchTurn();
   // } else{
-  //
+  //     setMessage("Pick another square.")
 }
 
-function nextMove (square) {
+function nextMove(square) {
   if (document.winner != null) {
     setMessage(document.turn + 'already won.')
   } else if (square.target.innerText === '') {
@@ -31,20 +26,19 @@ function nextMove (square) {
   }
 }
 
-function switchTurn () {
+function switchTurn() {
   if (checkForWinner(document.turn)) {
     setMessage(' Awesome ' + document.turn + ', You Win!')
     document.winner = document.turn
   } else if (document.turn === 'X') {
     document.turn = 'O'
-    setMessage(" It's " + document.turn + "'s turn.'")
   } else {
     document.turn = 'X'
     setMessage(" It's " + document.turn + "'s turn.'")
   }
 }
 
-function checkForWinner (move) {
+function checkForWinner(move) {
   let result = false
   if (checkRow(1, 2, 3, move) ||
         checkRow(4, 5, 6, move) ||
@@ -56,11 +50,10 @@ function checkForWinner (move) {
         checkRow(3, 5, 7, move)) {
     result = true
     return result
-    
   }
 }
 
-function checkRow (a, b, c, move) {
+function checkRow(a, b, c, move) {
   let result = false
   if (getBox(a) === move && getBox(b) === move && getBox(c) === move) {
     result = true
@@ -68,7 +61,7 @@ function checkRow (a, b, c, move) {
   return result
 }
 
-function getBox (number) {
+function getBox(number) {
   return document.getElementById('s' + number).innerText
 }
 
@@ -81,7 +74,7 @@ function getBox (number) {
 // const addHandlers = require('./authentication/events')
 
 // const moves = ['', '', '', '', '', '', '', '', '']
-// const playerXTurn = true // Is it currently the X Player's turn-used boolean since its t/f
+// let playerXTurn = true // Is it currently the X Player's turn-used boolean since its t/f
 // const moveCount = 0 // How many successful moves have occurred
 // const winner = false // Has a winner been found?
 // const points1 = 0 // player 1 points
@@ -141,12 +134,12 @@ function getBox (number) {
 //   square.innerText = document.turn
 // }
 
-function clearBox (number) {
+function clearBox(number) {
   document.getElementById('s' + number).innerText = ' '
 }
 const squareClickHandler = function (squareClickHandler, selectedSq) {
-//   console.log('Click Handler Clicked')
-//   console.log(this)
+  console.log('Click Handler Clicked')
+  console.log(this)
 }
 //   if (playerXTurn) {
 //     this.innerText = 'X'
@@ -161,26 +154,8 @@ const squareClickHandler = function (squareClickHandler, selectedSq) {
 // / Document onReady.Runs once when the site has loaded
 // $(() => {
 //   addHandlers(
-=======
-const game = require('./game')
-const events = require('./authentication/events')
->>>>>>> moved game lgic into its own file- then set up call handlers to export data to index.js and events.js- server is now responding to sign up,sign in. and sign out successfully.
 
-$(() => {
-  // stuff that happens when page is loaded
-  game.startGame()
-  //   squareClickHandler()
-  //   setMessage()
-  //   nextMove()
-  //   switchTurn()
-  checkForWinner()
-  //   checkRow()
-  //   pickAnotherSquare()
-  events.addHandlers()
-
-  $('.Square').on('click', function (event) {
-    // console.log(event.target.id)
-    // console.log(document.turn)
-  })
-  $('.Square').on('click', nextMove)
-})
+module.exports = {
+  startGame,
+  nextMove
+}
