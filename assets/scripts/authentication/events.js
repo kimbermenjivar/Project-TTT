@@ -23,17 +23,19 @@ const onSignIn = function (event) {
 
 const onChangePassword = function (event) {
   event.preventDefault()
-  console.log('Change Password ran!')
+  //   console.log('Change Password ran!')
 
   const data = getFormFields(this) // this === event.target
   api.changePassword(data)
     .then(ui.changePasswordSuccess)
     .catch(ui.changePasswordFailure)
 }
-
+const onStartGame = function (event) {
+  event.preventDefault()
+}
 const onSignOut = function (event) {
   event.preventDefault()
-  console.log('Sign put ran!')
+  //   console.log('Sign out ran!')
 
   api.signOut()
     .then(ui.signOutSuccess)
@@ -45,9 +47,9 @@ const addHandlers = () => {
   $('#sign-in').on('submit', onSignIn)
   $('#change-password').on('submit', onChangePassword)
   $('#sign-out').on('submit', onSignOut)
+  $('#start-game').on('submit', onStartGame)
 }
 
 module.exports = {
   addHandlers
 }
-

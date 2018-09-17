@@ -16,8 +16,8 @@ $(() => {
   events.addHandlers()
 
   $('.Square').on('click', function (event) {
-    console.log(event.target.id)
-    console.log(document.turn)
+    // console.log(event.target.id)
+    // console.log(document.turn)
   })
   $('.Square').on('click', game.nextMove, game.checkForWinner)
 })
