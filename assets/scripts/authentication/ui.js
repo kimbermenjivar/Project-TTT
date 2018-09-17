@@ -5,7 +5,6 @@ const store = require('../store')
 const signUpSuccess = function (data) {
   $('#message').text('Signed up successfully')
   $('#message').css('background-color', 'green')
-<<<<<<< 72f733f1140d90057470fa33749b081680388db4
   $('#sign-up')[0].reset()
 //   console.log('signUpSuccess ran. Data is:', data)
 }
@@ -15,39 +14,20 @@ const signUpFailure = function () {
   $('#message').css('background-color', 'red')
   $('#sign-up')[0].reset()
 //   console.log('signUpFailure ran. Data is:', error)
-=======
-  //   console.log('hello')
-  //   console.log('signUpSuccess ran. Data is:', data)
-}
-
-const signUpFailure = function () {
-  $('#message').text('Error on sign up')
-  $('#message').css('background-color', 'red')
-  //   console.log('signUpFailure ran. Data is:', error)
->>>>>>> Update game logic to display number of gammes played by a user
 }
 
 const signInSuccess = function (data) {
   $('#message').text('Signed in successfully')
   $('#message').css('background-color', 'green')
-<<<<<<< 72f733f1140d90057470fa33749b081680388db4
   $('#sign-in')[0].reset()
   //   console.log('signInSuccess ran. Data is:', data)
-=======
-  //   console.log(store)
->>>>>>> Update game logic to display number of gammes played by a user
   store.user = data.user
 }
 
 const signInFailure = function () {
   $('#message').text('Error on sign in')
   $('#message').css('background-color', 'red')
-<<<<<<< 72f733f1140d90057470fa33749b081680388db4
-  $('#sign-in')[0].reset()
-//   console.log('signInFailure ran. Data is:', error)
-=======
   //   console.log('signInFailure ran. Data is:', error)
->>>>>>> Update game logic to display number of gammes played by a user
 }
 
 const signOutSuccess = function () {
