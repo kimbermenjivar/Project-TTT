@@ -1,0 +1,6 @@
+const { console } = require('./events')
+const onStartGame = function event () {
+  event.preventDefault()
+//   console.log('Check for Wins')
+}
+exports.onStartGame = onStartGame

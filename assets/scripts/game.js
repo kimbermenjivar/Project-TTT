@@ -1,4 +1,4 @@
-function startGame() {
+function startGame () {
   for (let i = 1; i <= 9; i++) {
     clearBox(i)
   }
@@ -8,7 +8,7 @@ document.winner = null
 setMessage(document.turn + ' gets to start.')
 
 function setMessage (msg) {
-    console.log(msg)
+//   console.log(msg)
   document.getElementById('message').innerText = msg
   //  if(square.innerText = document.turn;
   // switchTurn();
@@ -23,7 +23,7 @@ function nextMove (square) {
     square.target.innerText = document.turn
     switchTurn()
     if (!document.winner) {
-      setMessage(document.turn + ' Pick another square.') 
+      setMessage(document.turn + ' Pick another square.')
     }
   }
 }
@@ -139,10 +139,11 @@ function getBox (number) {
 function clearBox (number) {
   document.getElementById('s' + number).innerText = ' '
 }
-const squareClickHandler = function (squareClickHandler, selectedSq) {
-  console.log('Click Handler Clicked')
-  console.log(this)
-}
+// const squareClickHandler = function (squareClickHandler, selectedSq) {
+//   console.log('Click Handler Clicked')
+//   console.log(this)
+
+// }
 //   if (playerXTurn) {
 //     this.innerText = 'X'
 //   } else {
@@ -159,6 +160,6 @@ const squareClickHandler = function (squareClickHandler, selectedSq) {
 
 module.exports = {
   startGame,
-  nextMove,
+  nextMove
 // checkForWinner
 }

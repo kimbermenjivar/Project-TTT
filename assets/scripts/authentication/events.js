@@ -6,11 +6,8 @@ const ui = require('./ui')
 
 const onSignUp = function (event) {
   event.preventDefault()
-<<<<<<< 849202826a24237b93b9b46052e972d8dc38cdb5
   // console.log('Sign up ran!')
 
-=======
->>>>>>> moved game lgic into its own file- then set up call handlers to export data to index.js and events.js- server is now responding to sign up,sign in. and sign out successfully.
   const data = getFormFields(this) // this === event.target
   api.signUp(data)
     .then(ui.signUpSuccess)
@@ -29,17 +26,19 @@ const onSignIn = function (event) {
 
 const onChangePassword = function (event) {
   event.preventDefault()
-  // console.log('Change Password ran!')
+  //   console.log('Change Password ran!')
 
   const data = getFormFields(this) // this === event.target
   api.changePassword(data)
     .then(ui.changePasswordSuccess)
     .catch(ui.changePasswordFailure)
 }
-
+const onStartGame = function (event) {
+  event.preventDefault()
+}
 const onSignOut = function (event) {
   event.preventDefault()
-  //   console.log('Sign put ran!')
+  //   console.log('Sign out ran!')
 
   api.signOut()
     .then(ui.signOutSuccess)
@@ -61,8 +60,7 @@ const addHandlers = () => {
   $('#sign-in').on('submit', onSignIn)
   $('#change-password').on('submit', onChangePassword)
   $('#sign-out').on('submit', onSignOut)
-  $('#allGames').on('click', showGamesPlayed)
-//   $('#start game').on('submit', OnStartGame)
+  $('#start-game').on('submit', onStartGame)
 }
 
 module.exports = {
