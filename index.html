@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+</head>
+<body>
+  <title>Tic Tac Toe</title>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Do not add `link` tags-->
+  <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+  <!-- Do not add `script` tags-->
+  <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
+  <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
+  </head>
+  <body>
+    <div class="container">
+      <form id="sign-up" class="border">
+        <input type="text" name="credentials[email]" placeholder="Email">
+        <input type="password" name="credentials[password]" placeholder="Password">
+        <input type="password" name="credentials[password_confirmation]" placeholder="Confirm Password">
+        <input type="submit" value="Sign up!">
+      </form>
+      <form id="sign-in" class="border">
+        <input type="text" name="credentials[email]" placeholder="Email">
+        <input type="password" name="credentials[password]" placeholder="Password">
+        <input type="submit" value="Sign in!">
+      </form>
+      <form id="change-password" class="border">
+        <input type="password" name="passwords[old]" placeholder="Old Password">
+        <input type="password" name="passwords[new]" placeholder="New Password">
+        <input type="submit" value="Change Password">
+      </form>
+      <form id="sign-out" class="border">
+        <input type="submit" value="Sign Out">
+      </form>
+      <h1> Tic-Tac-Toe</h1>
+      <div id="message">Message here.</div>
+      <table border="3">
+        <tr>
+          <td class="Square" data-index="0" id="s0"></td>
+          <td class="Square" data-index="1" id="s1"></td>
+          <td class="Square" data-index="2" id="s2"></td>
+        </tr>
+        <tr>
+          <td class="Square" data-index="3" id="s3"></td>
+          <td class="Square" data-index="4" id="s4"></td>
+          <td class="Square" data-index="5" id="s5"></td>
+        </tr>
+        <tr>
+          <td class="Square" data-index="6" id="s6"></td>
+          <td class="Square" data-index="7" id="s7"></td>
+          <td class="Square" data-index="8" id="s8"></td>
+        </tr>
+      </table>
+
+        <button id="newGame" type="submit">New Game</button>
+        <button id="allGames" type="submit">All Games</button>
+
+  </body>
+
+</html>
