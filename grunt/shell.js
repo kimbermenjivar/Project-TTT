@@ -16,10 +16,10 @@ module.exports = {
     command: 'test -z "$(git status --porcelain)"  || (git status && false)'
   },
   'git-push-master': {
-    command: 'git push origin master'
+    command: 'git push origin new-dev'
   },
   'git-checkout-master': {
-    command: 'git checkout master'
+    command: 'git checkout new-dev'
   },
   'deploy-prepare': {
     command: [
@@ -35,7 +35,7 @@ module.exports = {
       'git commit -m "deploy task"',
       'git push origin gh-pages --force',
       'git clean -x -d --force --exclude=node_modules',
-      'git checkout master'
+      'git checkout new-dev'
     ].join(' && ')
   }
 }

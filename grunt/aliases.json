@@ -2,9 +2,9 @@
   "default": ["nag", "test"],
   "deploy": [
     "shell:git-is-clean",
-    "shell:git-checkout-new-dev",
+    "shell:git-checkout-master",
     "build",
-    "shell:git-push-new-dev",
+    "shell:git-push-master",
     "shell:deploy-prepare",
     "build",
     "shell:deploy-publish"
