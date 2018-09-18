@@ -1,7 +1,7 @@
 'use strict'
-const authEvents = require('./authentication/events.js')
+// const authEvents = require('./authentication/events.js')
 
-const game = require('./game')
+// const game = require('./game')
 const events = require('./authentication/events')
 const gameEvents = require('./game/events')
 
